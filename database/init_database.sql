@@ -11,6 +11,7 @@ CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
     foto VARCHAR(500) DEFAULT 'default.jpg',
     baneado BOOLEAN DEFAULT FALSE,
     admin BOOLEAN DEFAULT FALSE
@@ -32,5 +33,5 @@ CREATE TABLE compras (
 );
 
 -- VALORES INICIALES (USUARIO ADMIN)
-INSERT INTO usuarios (nombre, email, baneado, admin)  
-VALUES ('admin', 'admin@catalogo_videojuegos.es', FALSE, TRUE);
+INSERT INTO usuarios (nombre, email, password, baneado, admin)  
+VALUES ('admin', 'admin@catalogo_videojuegos.es', 'admin', FALSE, TRUE);
